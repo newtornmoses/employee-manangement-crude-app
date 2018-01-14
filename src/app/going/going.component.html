@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="statistics" *ngIf="total">
+            <h3>STATISTICS</h3>
+            <h5>TOTAL FILES: {{totalFiles()}} </h5>
+            <h5>TOTAL SALARY: {{getTotal()}} </h5>
+            <h5 class="departments">TOTAL BY DEPARTMENT:
+                <button>Json format</button>
+
+
+                <pre [style.color]="'white'"> {{getcount()| json}}</pre>
+
+
+                <p> accountant : {{getcount().accountant}} </p>
+                <p>cook : {{getcount().cook}} </p>
+
+                <p>cleaner supervisor : {{getcount().cleanersupervisor}} </p>
+                <p>web developer : {{getcount().webdeveloper}} </p>
+                <p>electrician : {{getcount().electrician}} </p>
+                <p>writer : {{getcount().writer}} </p>
+
+                <p>cleaner : {{getcount().cleaner}} </p>
+
+            </h5>
+        </div>
+
+    </div>
+
+    <div class=" col-md-9 ">
+        <div *ngIf="nofile ">
+            <h5>{{nofiles}}
+                <span>
+                     <p [style.color]=" 'red' ">
+                       click untill total number stops counting</p>
+                  </span>
+            </h5>
+
+        </div>
+
+        <a class="btn btn-primary " (click)="removeDups(member) ">remove duplicates</a>
+        <a class="btn btn-warning " (click)="export()">Export To Excell</a>
+        <input type="text " name="search " placeholder="search " (keyup)="searchtxt(search) " [(ngModel)]="search ">
+        <p *ngIf='search' id="search" [style.color]=" 'white' ">{{content | json}}</p>
+        <table id="mytable" class="table table-bordered table-hover table-stripped ">
+
+            <thead>
+
+                <tr contenteditable="true">
+
+                    <th (click)="getlist($event.name)" name="name">NAME</th>
+                    <th (click)="getlist2($event.name)" name="department">DEPARTMENT</th>
+                    <th (click)="getlist3($event.name)" name="salary">SALARY</th>
+                    <th (click)="getlist5($event.name)" name="date">DATE </th>
+
+                </tr>
+            </thead>
+            <tbody contenteditable="true">
+                <ng-container *ngFor="let member of going, let w=index; ">
+                    <tr>
+                        <h1 *ngIf="!going "> no members</h1>
+                        <td>{{member.name}}</td>
+                        <td>{{member.department}}</td>
+                        <td>{{member.salary}}</td>
+                        <td>{{member.date | date:'longDate'}}</td>
+
+                    </tr>
+
+
+
+
+                </ng-container>
+
+            </tbody>
+        </table>
+
+        <pre>{{dateRemain()|json }}</pre>
+    </div>
+</div>
+
+
+
+<kendo-chart [categoryAxis]="{categories: years}">
+    <kendo-chart-title text="my first try"></kendo-chart-title>
+    <kendo-chart-legend position="bottom" orientation="horizontal"></kendo-chart-legend>
+    <kendo-chart-series>
+        <kendo-chart-series-item *ngFor="let go of students" type="bar" [data]="go.salary" [name]="go.name">
+
+        </kendo-chart-series-item>
+    </kendo-chart-series>
+</kendo-chart>

@@ -1,0 +1,42 @@
+<app-add-members>
+</app-add-members>
+<div class="row">
+    <div class="col-md-3">
+        <div class="statistics">
+            <h3>STATISTICS</h3>
+            <h5>TOTAL FILES: </h5>
+            <h5>TOTAL SALARY: </h5>
+            <h5 class="departments">TOTAL BY DEPARTMENT:
+                <ul [style.background-color]="''">
+                    <li *ngFor="let departs of members">{{departs.department}}</li>
+
+                </ul>
+            </h5>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-9">
+        <table class="table table-bordered table-hover table-stripped">
+            <thead>
+                <tr>
+                    <th (click)="sortName()">NAME</th>
+                    <th (click)="sortDep()">DEPARTMENT</th>
+                    <th (click)="sortSalary()">SALARY</th>
+                    <th (click)="sortDate()">DATE</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of members">
+                    <td>{{member.name }}</td>
+                    <td>{{member.department}}</td>
+                    <td [style.backgroundColor]="member.salary > 2000 ? 'green' : 'red '">{{member.salary}}</td>
+                    <td>{{member.date | date:'longDate'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+
+    <button class="btn btn-primary" onclick="ExportToExcel()">export</button>
+
+    <table id="mytable" class=" table table-bordered table-hover table-stripped ">
+
+        <thead>
+
+            <tr>
+
+                <th (click)="getlist($event.name) " name="name ">NAME</th>
+                <th (click)="getlist2($event.name) " name="department ">DEPARTMENT</th>
+                <th (click)="getlist3($event.name) " name="salary ">SALARY</th>
+                <th (click)="getlist5($event.name) " name="date ">DATE </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let member of going, let w=index; ">
+                <tr>
+                    <h1 *ngIf="!going "> no members</h1>
+                    <td>344</td>
+                    <td>44445</td>
+                    <td>44444</td>
+                    <td>44444</td>
+
+
+
+
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript ">
+        function ExportToExcel() {
+
+            var htmltable = document.getElementById('mytable');
+            var html = htmltable.outerHTML;
+            window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<div class="container">
+
+    <a (click)="add()" class="btn btn-info"> add a member</a>
+    <div *ngIf="added" class="col-md-6">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]='model.name' placeholder="enter name">
+        <label for="name">Department:</label>
+        <input type="text" class="form-control" name="department" [(ngModel)]='model.department' placeholder="enter department">
+        <label for="name">Salary:</label>
+        <input type="text" class="form-control" name="salary" [(ngModel)]='model.salary' placeholder="enter salary">
+        <label for="name">Date:</label>
+        <input type="text" class="form-control" name="date" [(ngModel)]='model.date' placeholder="enter starting date | 'Month/Day/Year'">
+        <a (click)=" save(model)" class="btn btn-success">save</a>
+    </div>
+</div>
+<div> <br></div>
+<div> <br></div>

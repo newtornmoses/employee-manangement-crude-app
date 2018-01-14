@@ -1,1 +1,187 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    color: #1B1A1A;
+}
+
+.btn,
+#btn,
+#btnsmall,
+#btnclose {
+    cursor: pointer;
+}
+
+.header {
+    z-index: 2;
+}
+
+p {
+    background: #D31414;
+    height: 30px;
+    line-height: 2;
+    border-radius: 5px;
+    bx-shadow: 2px 2px 3px black;
+}
+
+pre {
+    background: rgba(20, 19, 22, 0.96);
+    overflow-x: none;
+    border-radius: 5px;
+}
+
+#search {
+    background: darkcyan;
+}
+
+.btn {
+    width: 400px
+}
+
+li {
+    list-style-type: none
+}
+
+.badge {
+    float: left;
+    min-width: 100px
+}
+
+label {
+    color: white;
+}
+
+#buttons {
+    margin-left: 100px
+}
+
+#btn {
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+#btnsmall {
+    WIDTH: 50PX;
+    background: orangered;
+    border: none;
+}
+
+.btn {
+    width: 200px;
+}
+
+h5 {
+    background-color: #1B2A3A;
+    color: white;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    max-height: 1200px;
+}
+
+li {
+    text-align: left;
+    color: black;
+}
+
+.departments {
+    min-height: 800px;
+    width: 300px;
+}
+
+#plus {
+    backgound: black;
+    border-radius: 80px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    color: white;
+    paddng: 5px;
+    font-size: 30px;
+}
+
+#btnclose {
+    width: 400px;
+    float: right;
+    color: white;
+    animation: timeOut .2s ease-out;
+    transition: transform .2s ease;
+}
+
+@-webkit-keyframes timeOut {
+    0% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(-90px);
+    }
+}
+
+#btnclose span {
+    float: right;
+}
+
+ul a {
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin: 0px 80px 0px 0px;
+    background: #3E3D3C;
+}
+
+a:hover {
+    transform: translate3d(10px, 5px, 20px);
+    transition: transform .2s ease-in-out;
+}
+
+#ul {
+    margin-left: 500px
+}
+
+.card {
+    border: none;
+}
+
+#leave {
+    background-color: rgba(54, 52, 52, 0.23);
+    color: #1B1A1A;
+}
+
+body {
+    background: #18173C;
+    color: white;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    background: #161515;
+    top: 0;
+    z-index: 2;
+    align-self: auto;
+}
+
+table {
+    background: white;
+    color: black;
+}
+
+#btn3 {
+    width: 80px;
+}
+
+#btnadd {
+    width: 200px;
+    margin-left: 200px;
+    display: inline-block;
+}
